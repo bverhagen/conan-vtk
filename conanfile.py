@@ -85,4 +85,7 @@ class LibnameConan(ConanFile):
         self.copy(pattern="*.dylib", dst="lib", keep_path=False)
 
     def package_info(self):
+        self.cpp_info.includedirs = ['include/vtk-6.3']
         self.cpp_info.libs = tools.collect_libs(self)
+        self.cpp_info.libdirs = ['lib']
+        self.cpp_info.bindirs = ['bin']
